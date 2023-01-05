@@ -25,3 +25,11 @@ import {FileUploadHandler} from '@{your-username}/cloud-uploader'`;
 ```javascript
 FileUploadHandler(provider:string, files: any[]); // takes two parameters
 ```
+
+provider = ['aws', 'cloudinary']
+
+Example :
+
+```javascript
+FileUploadHandler('aws', ['multer file Object']);
+```
