@@ -1,6 +1,6 @@
 {
   "name": "@jayaprakash-optisol/cloud-uploader",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generic Package to Upload Files to Different Cloud Services.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
