@@ -1,0 +1,33 @@
+name: Node.js Package
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish-gpr:
+    name: publish
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Automated Version Bump
+        uses: 'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          version-type: 'patch'
+      - name: node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{matrix.node-version}}
+          registry-url: https://npm.pkg.github.com/
+          scope: '@jayaprakash-optisol'
+      - run: npm install
+      - run: npm run build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
