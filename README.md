@@ -10,6 +10,7 @@ Generic Package to Upload Files to Different Cloud Services.
 
 ## Description
 
+Update package.json
 You can Add new services in `src/services` directory and commit the code to main branch.
 The github action will run the workflow and bump your latest package version automatically.
 
@@ -17,6 +18,10 @@ The github action will run the workflow and bump your latest package version aut
 
 Install the package using: `npm install @{your-username}/cloud-uploader`
 
-`import {FileUploadHandler} from '@{your-username}/cloud-uploader'`;
+```javascript
+import {FileUploadHandler} from '@{your-username}/cloud-uploader'`;
+```
 
-`FileUploadHandler(provider:string, files: any[])` takes two parameters `
+```javascript
+FileUploadHandler(provider:string, files: any[]); // takes two parameters
+```
